@@ -1,0 +1,18 @@
+<!doctype html>
+
+<title>Element Factory</title>
+
+<script src="https://unpkg.com/react@16.4.0/umd/react.development.js"></script>
+<script src="https://unpkg.com/react-dom@16.4.0/umd/react-dom.development.js"></script>
+<script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+<div id="app"></div>
+
+<script type="text/babel">
+
+  const reactElement = <h1 className="jsx" style={{ textAlign: "center"}}>Hello World</h1>
+
+  ReactDOM.render(reactElement, document.getElementById('app'))
+  
+
+</script>

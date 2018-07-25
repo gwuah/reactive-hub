@@ -1,0 +1,44 @@
+<!doctype html>
+
+<title>Element Factory</title>
+
+<script src="https://unpkg.com/react@16.4.0/umd/react.development.js"></script>
+<script src="https://unpkg.com/react-dom@16.4.0/umd/react-dom.development.js"></script>
+<script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+<div id="app"></div>
+
+<script type="text/babel">
+
+ const myClass = "griff"
+
+ function text() {
+   return "Hello World"
+ }
+
+ const properties = {
+   className: myClass,
+   style: {
+     color: 'white',
+     backgroundColor: 'red'
+   }
+ }
+ 
+ const nested = <h1>I'm fucking nested</h1>
+
+ const reactElement = 
+  <div className={myClass}>
+    <p>{text()}</p>
+    <div>{ nested }</div>
+  </div>
+
+  const reactElement2 = 
+    <div { ...properties }>
+      <p>{text()}</p>
+      <div>{ nested }</div>
+    </div>
+
+  ReactDOM.render(reactElement2, document.getElementById('app'))
+  
+
+</script>

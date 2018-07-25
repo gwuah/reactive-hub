@@ -1,0 +1,24 @@
+<!doctype html>
+
+<title>Element Factory</title>
+
+<script src="https://unpkg.com/react@16.4.0/umd/react.development.js"></script>
+<script src="https://unpkg.com/react-dom@16.4.0/umd/react-dom.development.js"></script>
+
+<div id="app"></div>
+
+<script>
+  
+  const NavBar = React.createElement('div', {
+    className: 'factory',
+    style: {
+      color: 'red',
+      backgroundColor: 'black'
+    }
+  }, 'ELEMENT FACTORY');
+
+  const HelloWorld = React.createElement("p", null, "Hello World");
+
+  ReactDOM.render(NavBar, document.getElementById('app'));
+
+</script>

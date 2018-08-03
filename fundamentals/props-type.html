@@ -6,12 +6,29 @@
 <script src="https://unpkg.com/react-dom@16.4.0/umd/react-dom.development.js"></script>
 <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
 
+<script src="https://unpkg.com/prop-types@15.6.1/prop-types.js">
+  // PropTypes were removed from React 16 and are now their own package
+  </script>
+
 <div id="app"></div>
 
 <script type="text/babel">
 
- 
- ReactDOM.render(<MyComponentParent/>, document.getElementById('app'))
+  function MyComponent(props) {
+    return (
+      <div className={props.className}>
+        <h1>Hello</h1>
+        <h2>{props.customData}</h2>
+      </div>
+    )
+  }
+
+  MyComponent.propTypes = {
+    className: PropTypes.string,
+    customData: PropTypes.string
+  }
+  
+ ReactDOM.render(<MyComponent customData={'123'}/>, document.getElementById('app'))
 
 
 

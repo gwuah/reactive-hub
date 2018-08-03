@@ -1,0 +1,44 @@
+<!doctype html>
+
+<title>Properties - 2</title>
+
+<script src="https://unpkg.com/react@16.4.0/umd/react.development.js"></script>
+<script src="https://unpkg.com/react-dom@16.4.0/umd/react-dom.development.js"></script>
+<script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+<div id="app"></div>
+
+<script type="text/babel">
+
+ function MyComponent(props) {
+   return (
+     <div className={props.className}>
+        <h1>I am {props.age} years old</h1>
+        <h3>HBU?</h3>
+     </div>
+   )
+ }
+
+
+ const element = <MyComponent className='simple' age='18'/>
+
+ const props = {
+   className: 'simple',
+   age: 18
+ };
+ 
+//  <MyComponent { ...props }/>
+
+ function MyComponentParent() {
+   return (
+     ['18', '19', '20'].map((age, index) => {
+        return <MyComponent className='simple' age={age} key={index}/>
+      })
+    )
+ }
+
+ ReactDOM.render(<MyComponentParent/>, document.getElementById('app'))
+
+
+
+</script>
